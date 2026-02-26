@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login – Kumbh Sahayak</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+  font-family:Arial;
+  background:#fff7e6;
+  text-align:center;
+  padding:30px;
+}
+.box{
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  max-width:350px;
+  margin:auto;
+  box-shadow:0 2px 8px rgba(0,0,0,0.2);
+}
+input{
+  width:90%;
+  padding:10px;
+  margin:10px 0;
+}
+button{
+  padding:12px 20px;
+  background:#ff9933;
+  color:white;
+  border:none;
+  border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+<div class="box">
+  <h2>🔐 Login</h2>
+  <input type="text" id="user" placeholder="Username">
+  <input type="password" id="pass" placeholder="Password">
+  <button onclick="login()">Login</button>
+</div>
+
+<script>
+function login(){
+  let u = document.getElementById("user").value;
+  let p = document.getElementById("pass").value;
+
+  if(u === "premium" && p === "1234"){
+    localStorage.setItem("loggedIn","yes");
+    window.location.href="premium.html";
+  }else{
+    alert("Wrong login details");
+  }
+}
+</script>
+</body>
+</html>
